@@ -23,7 +23,7 @@ export default function SearchMovies()
     
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             <form className="form" onSubmit={searchMovies} >
             <label className="label" htmlFor="query">Movie Name</label>
             <input  className="input" type="text" name="query"
@@ -33,7 +33,7 @@ export default function SearchMovies()
                />
             <button className="button" type="submit">Search</button>
         </form>
-        <div className="card-list">
+        <div className="card-list ">
                 {movies.filter(movie => movie.poster_path).map(movie => (
                    <MovieCard movie={movie}  key={movie.id} movie_id={movie.id} />
                 ))}

@@ -5,14 +5,14 @@ import Youtube from "react-youtube"
 export default function MovieCard({movie,movie_id}){
     const [trailerBool,setTrailer] = useState(false);
     const [url_trailer,setUrl] = useState("");
-    const opts = {
-        height: '240',
-        width: '240',
-        playerVars: {
-          // https://developers.google.com/youtube/player_parameters
-          autoplay: 1,
-        },
-      };
+    // const opts = {
+    //     height: '240',
+    //     width: '240',
+    //     playerVars: {
+    //       // https://developers.google.com/youtube/player_parameters
+    //       autoplay: 1,
+    //     },
+    //   };
     const handle_click = async ()=>
    { 
        fetch(`https://api.themoviedb.org/3/movie/${movie_id}}/videos?api_key=66ab391092a1de38b5f8e93d9fd8019f&append_to_response=videos`)

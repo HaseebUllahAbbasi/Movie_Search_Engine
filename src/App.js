@@ -5,7 +5,7 @@ import SearchMovies from './SearchMovies';
 function App() {
     return (
       <div className="container-fluid">
-        <h1 className="title" id="title-1">. Doesn't like movies, but I made Movie a Search Engine.</h1>
+        <h1 className="title" id="title-1">I Don't like movies, but I made Movie a Search Engine.</h1>
         <SearchMovies/>
       </div>
     );

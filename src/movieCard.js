@@ -17,6 +17,7 @@ export default function MovieCard({movie,movie_id}){
    { 
        fetch(`https://api.themoviedb.org/3/movie/${movie_id}}/videos?api_key=66ab391092a1de38b5f8e93d9fd8019f&append_to_response=videos`)
         .then(data => data.json()).then(json_data => setUrl(json_data.results[0].key));
+        
        setTrailer(true);
    }
 //    useEffect(function(){
@@ -42,6 +43,10 @@ export default function MovieCard({movie,movie_id}){
             <h3 className="card--title text-center">{movie.title}</h3>
             <p className="text-center"><small>RELEASE DATE: {movie.release_date}</small></p>
             <p className="text-center"><small>RATING: {movie.vote_average}</small></p>
+            <p className="text-center"><small>popularity: {movie.popularity}</small></p>
+            
+            <p className="text-center"><small>vote_average: {movie.vote_average}</small></p>
+            
             <p className="card-desc ">{movie.overview}</p>
             </div>
             <div className="container text-center">
@@ -54,7 +59,7 @@ export default function MovieCard({movie,movie_id}){
                     </button>  
                     </div>
                     
-                      : <div className="col" id="col-custom"  >   <Youtube videoId={url_trailer}></Youtube> </div>  
+                      : <div className="col" id="col-custom"  >   <Youtube videoId={url_trailer} style={{innerWidth:"100px", outerWidth:"100px"}} ></Youtube> </div>  
                    }
                 </div>    
             </div>
